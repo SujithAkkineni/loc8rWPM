@@ -4,6 +4,7 @@ services:
     runtime: node
     buildCommand: npm install
     startCommand: npm start
-    envVars:
-      - key: DATABASE_URL
-        generateValue: true
+  - type: pserv
+    name: wpm-db
+    runtime: mongodb
+    ipAllowList: [] # only accessible from other services
